@@ -235,8 +235,8 @@ def get_zx_ul_data():
 	else:
 		ul_train_X = pickle.load( open("data/zx_ul_train_X.p", "rb") )
 
-	random.shuffle(ul_train_X)
-	ul_train_X = ul_train_X[:len(ul_train_X)/3]
+	# random.shuffle(ul_train_X)
+	# ul_train_X = ul_train_X[:len(ul_train_X)/3]
 
 	return ul_train_X
 
@@ -513,3 +513,7 @@ def pl_data_iterator(X, Y, bi_X, W, batch_size, shuffle, vocab_size, bi_vocab_si
 
 	yield padded_X, padded_Y, padded_bi_X, fw_Y, bw_Y, padded_W
 
+
+if __name__ == '__main__':
+	build_zx_vocab()
+	build_zx_bi_vocab()
